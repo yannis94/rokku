@@ -8,7 +8,7 @@ void tui_intro() {
   printf("###############################\n\n\n");
 }
 
-void tui_print_msg(char *msg) { printf("%s\n", msg); }
+void tui_print_msg(char *msg) { printf("%s", msg); }
 
 void tui_main_menu() {
   printf("Choose an option below\n");
@@ -17,21 +17,21 @@ void tui_main_menu() {
   printf("3. quit\n");
 }
 
-void tui_password_menu() {
-  printf("Choose an option below\n");
-  printf("1. \n");
-  printf("2. passphrase generation\n");
-  printf("3. quit\n");
-}
+void tui_password_menu() { printf("Build your new password\n"); }
 
-int tui_get_user_choice() {
+int tui_get_user_choice(char *question) {
   char line[256];
   int choice;
-  tui_print_msg("Choice> ");
+  tui_print_msg(question);
   if (fgets(line, sizeof(line), stdin)) {
     if (1 == sscanf(line, "%d", &choice)) {
       return choice;
     }
+    printf("Incorrect, it should be a digit.\nTry again\n\n");
   }
   return -1;
+}
+
+void tui_password_properties() {
+  printf("######## Password properties #######\n");
 }
