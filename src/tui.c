@@ -1,4 +1,5 @@
 #include "../include/tui.h"
+#include "../include/util.h"
 #include <stdio.h>
 
 void tui_intro() {
@@ -32,6 +33,15 @@ int tui_get_user_choice(char *question) {
   return -1;
 }
 
+char tui_get_user_char(char *question) {
+  char line[256];
+  char input;
+  tui_print_msg(question);
+  scanf(" %c", &input);
+  return input;
+}
+
 void tui_password_properties() {
+  clear_screen();
   printf("######## Password properties #######\n");
 }

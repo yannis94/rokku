@@ -14,3 +14,5 @@ void shuffle_string(char *str) {
     str[r] = temp;
   }
 }
+
+void clear_screen() { system("clear"); }
