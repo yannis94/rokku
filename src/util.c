@@ -1,4 +1,5 @@
 #include "../include/util.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -16,3 +17,21 @@ void shuffle_string(char *str) {
 }
 
 void clear_screen() { system("clear"); }
+
+int append_str_in_arr(char **arr, int *arr_len, int current_idx, char *str) {
+  if (current_idx == *arr_len) {
+    *arr_len *= 2;
+
+    char **temp = (char **)realloc(arr, *arr_len * sizeof(char *));
+
+    if (temp == NULL) {
+      printf("Memory reallocation failed.\n");
+      return 1;
+    }
+
+    arr = temp;
+  }
+
+  arr[current_idx] = str;
+  return 0;
+}
