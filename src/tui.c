@@ -77,13 +77,26 @@ void tui_passphrase_property() {
   printf("######## Passphrase properties #######\n");
 }
 
-void tui_print_passphrase(char *pp, int words, int total_chars) {
-  printf("Passphrase generated with %d words\n\n", words);
-  for (int i = 0; i < total_chars + words; i++) {
+void tui_print_password(char *pwd, int total_chars) {
+  int tab_length = 14; // one tab = 7 chars long
+  for (int i = 0; i <= total_chars + tab_length; i++) {
     printf("#");
   }
-  printf("\n\n%s\n\n", pp);
-  for (int i = 0; i < total_chars + words; i++) {
+  printf("\n\n\t%s\t\n\n", pwd);
+  for (int i = 0; i <= total_chars + tab_length; i++) {
+    printf("#");
+  }
+  printf("\n\n");
+}
+
+void tui_print_passphrase(char *pp, int words, int total_chars) {
+  int tab_length = 14; // one tab = 7 chars long
+  printf("Passphrase generated with %d words\n\n", words);
+  for (int i = 0; i <= total_chars + words + tab_length; i++) {
+    printf("#");
+  }
+  printf("\n\n#\t%s\t#\n\n", pp);
+  for (int i = 0; i <= total_chars + words + tab_length; i++) {
     printf("#");
   }
   printf("\n\n");

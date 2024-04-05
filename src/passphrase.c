@@ -25,10 +25,10 @@ void generate_passphrase(Passphrase *passphrase) {
       return;
     }
     result = temp;
+    int l = strlen(word);
+    total_passphrase_chars += l;
     if (i < passphrase->length - 1) {
-      int l = strlen(word);
       word[l] = '-';
-      total_passphrase_chars += l;
     }
     strcat(result, word);
   }

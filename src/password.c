@@ -48,7 +48,7 @@ void generate_password(Password *pwd) {
   result[char_counter] = '\0';
 
   shuffle_string(result);
-  printf("\n\nYour password > %s\n", result);
+  tui_print_password(result, char_counter);
   free(result);
 }
 

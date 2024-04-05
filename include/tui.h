@@ -3,6 +3,8 @@
 
 void tui_intro();
 void tui_print_msg(char *msg);
+void tui_print_password(char *pwd, int total_chars);
+void tui_print_passphrase(char *pp, int words, int total_chars);
 void tui_main_menu();
 void tui_password_menu();
 void tui_password_properties();
