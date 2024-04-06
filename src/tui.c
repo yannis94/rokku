@@ -3,7 +3,6 @@
 #include "../include/password.h"
 #include "../include/util.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 void tui_intro() {
   printf("############ ROKKU ############\n");
